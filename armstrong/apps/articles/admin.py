@@ -11,12 +11,13 @@ from .models import Article
 class ArticleAdmin(SectionTreeAdminMixin, VersionAdmin, hatband.ModelAdmin):
     fieldsets = (
         (None, {
-            'fields': ('title', 'slug', 'summary', 'body', ),
+            'fields': ('title', 'slug', 'summary', 'body', 'home_summary', 'home_title'),
         }),
 
         fieldsets.TAXONOMY,
         fieldsets.PUBLICATION,
         fieldsets.AUTHORS,
+
     )
 
     inlines = [
