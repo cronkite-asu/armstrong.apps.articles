@@ -17,6 +17,8 @@ class Migration(SchemaMigration):
         db.create_table('articles_article', (
             ('content_ptr', self.gf('django.db.models.fields.related.OneToOneField')(to=orm['content.Content'], unique=True, primary_key=True)),
             ('body', self.gf('django.db.models.fields.TextField')()),
+            ('home_summary', self.gf('django.db.models.fields.TextField')()),
+            ('home_title', self.gf('django.db.models.fields.TextField')()),
         ))
         db.send_create_signal('articles', ['Article'])
 
