@@ -19,6 +19,10 @@ class ArticleAdmin(SectionTreeAdminMixin, VersionAdmin, hatband.ModelAdmin):
         fieldsets.AUTHORS,
 
     )
+    list_display = ["slug", "title"]
+    search_fields = ['title', 'slug', 'body']
+
+
 
     inlines = [
         RelatedContentInline,
